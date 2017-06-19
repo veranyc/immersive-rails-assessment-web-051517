@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :guests, only: [:index]
-  resources :episodes, only: [:index]
+  get "/" => "sessions#index"
+  post "sessions/new" => "sessions#create"
+  resources :guests, only: [:index, :show]
+  resources :episodes, only: [:index, :show]
+  resources :appearances
+  resources :users
+  resources :sessions
+
 end

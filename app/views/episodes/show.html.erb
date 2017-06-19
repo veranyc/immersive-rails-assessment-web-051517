@@ -1,0 +1,12 @@
+<h1> View an Episode </h1>
+
+<p>Date: <%= @episode.date %></p>
+<ul>
+  <% @guests.each do |guest| %>
+    <li><%= @guest.name%></li>
+    <li><%= @guest.occupation%></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "See episodes", episodes_path %>
